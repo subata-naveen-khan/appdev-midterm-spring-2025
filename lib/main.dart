@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:midterm_s2025/bloc/obj_bloc.dart';
+import 'package:midterm_s2025/bloc/product_bloc.dart';
 import 'package:midterm_s2025/homepage.dart';
-import 'package:midterm_s2025/Obj/obj_repo.dart';
+import 'package:midterm_s2025/Product/prod_repo.dart';
 
 void main() {
-  final ObjRepo objRepo = ObjRepo();
-  final ObjBloc objBloc = ObjBloc(objRepo: objRepo);
+  final ProductRepo prodRepo = ProductRepo();
+  final ProductBloc productBloc = ProductBloc(prodRepo: prodRepo);
   
   runApp(
   MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => objBloc),
+        BlocProvider(create: (_) => productBloc),
       ],
       child: const MainApp(),
     ),

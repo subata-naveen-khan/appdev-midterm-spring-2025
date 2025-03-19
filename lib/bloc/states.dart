@@ -1,34 +1,34 @@
 import 'package:equatable/equatable.dart';
-import 'package:midterm_s2025/Obj/obj_model.dart';
+import 'package:midterm_s2025/Product/product_model.dart';
 
-abstract class ObjState extends Equatable {
-  const ObjState();
+abstract class ProductState extends Equatable {
+  const ProductState();
 }
 
-class ObjInitial extends ObjState {
+class ProductInitial extends ProductState {
   @override
   List<Object> get props => [];
 }
 
-class ObjsLoading extends ObjState {
+class ProductsLoading extends ProductState {
   @override
   List<Object> get props => [];
 }
 
 
-class ObjsLoaded extends ObjState {
-  final List<ObjModel> objs;
+class ProductsLoaded extends ProductState {
+  final List<ProductModel> products;
 
-  const ObjsLoaded({required this.objs});
+  const ProductsLoaded({required this.products});
 
   @override
-  List<Object> get props => [objs];
+  List<Object> get props => [products];
 }
 
-class ObjError extends ObjState {
+class ProductError extends ProductState {
   final String message;
 
-  const ObjError({required this.message});
+  const ProductError({required this.message});
 
   @override
   List<Object> get props => [message];
